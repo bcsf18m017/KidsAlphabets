@@ -23,7 +23,7 @@ public class secondPage extends AppCompatActivity {
     Button btn;
     ScaleAnimation scale;
     TranslateAnimation trans;
-    RotateAnimation rotate;
+    RotateAnimation rotate,rotate1;
     AlphaAnimation al;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,127 +40,127 @@ public class secondPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name=btn.getText().toString();
-                if(name=="Play Apple")
+                if(name.equals("Play Apple"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.apple1);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Bat")
+                else if (name.equals("Play Bat"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.bat);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Cat")
+                else if (name.equals("Play Cat"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.cat);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Dog")
+                else if (name.equals("Play Dog"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.dog);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Elephant")
+                else if (name.equals("Play Elephant"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.elephant);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Frog")
+                else if (name.equals("Play Frog"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.frog);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Goat")
+                else if (name.equals("Play Goat"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.goat);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Hat")
+                else if (name.equals("Play Hat"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.hat);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Ink")
+                else if (name.equals("Play Ink"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.ink);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Juice")
+                else if (name.equals("Play Juice"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.juice);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Kite")
+                else if (name.equals("Play Kite"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.kite);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Lamb")
+                else if (name.equals("Play Lamb"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.lamb);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Monkey")
+                else if (name.equals("Play Monkey"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.monkey);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Nose")
+                else if (name.equals("Play Nose"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.nose);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Ocean")
+                else if (name.equals("Play Ocean"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.ocean);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Parrot")
+                else if (name.equals("Play Parrot"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.parrot);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Quail")
+                else if (name.equals("Play Quail"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.quail);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Rat")
+                else if (name.equals("Play Rat"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.rat);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Sun")
+                else if (name.equals("Play Sun"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.sun);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Tap")
+                else if (name.equals("Play Tap"))
                 {
                     mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.tap);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Umbrella") {
+                else if (name.equals("Play Umbrella")) {
                     mediaPlayer = MediaPlayer.create(secondPage.this, R.raw.umbrella);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Violin") {
+                else if (name.equals("Play Violin")) {
                     mediaPlayer = MediaPlayer.create(secondPage.this, R.raw.violin);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Well") {
+                else if (name.equals("Play Well")) {
                     mediaPlayer = MediaPlayer.create(secondPage.this, R.raw.well);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Xylophone") {
+                else if (name.equals("Play Xylophone")) {
                     mediaPlayer = MediaPlayer.create(secondPage.this, R.raw.xylophone);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Yacht") {
+                else if (name.equals("Play Yacht")) {
                     mediaPlayer = MediaPlayer.create(secondPage.this, R.raw.yacht);
                     mediaPlayer.start();
                 }
-                else if (name=="Play Zebra") {
+                else if (name.equals("Play Zebra")) {
                     mediaPlayer = MediaPlayer.create(secondPage.this, R.raw.zebra);
                     mediaPlayer.start();
                 }
@@ -172,16 +172,18 @@ public class secondPage extends AppCompatActivity {
 
         String alpha = getIntent().getStringExtra("alphabet");
         Log.d(alpha, alpha);
+        rotate = new RotateAnimation(90, 0);
+        rotate.setDuration(1500);
         if (alpha.equals("A")) {
-            scale = new ScaleAnimation(0, 2, 0, 2);
-            scale.setDuration(2500);
-            img.startAnimation(scale);
             img.setImageResource(R.drawable.apple);
             lbl.setText("Apple");
             character.setText("Aa");
             btn.setText("Play Apple");
             vowel.setText("Vowel");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.apple1);
+            mediaPlayer.start();
         } else if (alpha.equals("B")) {
             img.setImageResource(R.drawable.bat);
             lbl.setText("Bat");
@@ -189,9 +191,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Bat");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
-            trans = new TranslateAnimation(0, 100, 0, 100);
-            trans.setDuration(500);
-            img.startAnimation(trans);
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.bat);
+            mediaPlayer.start();
         } else if (alpha.equals("C")) {
             img.setImageResource(R.drawable.cat);
             lbl.setText("Cat");
@@ -199,9 +201,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Cat");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
-            rotate = new RotateAnimation(0, 150);
-            rotate.setDuration(1500);
             img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.cat);
+            mediaPlayer.start();
         } else if (alpha.equals("D")) {
             img.setImageResource(R.drawable.dog);
             lbl.setText("Dog");
@@ -209,9 +211,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Dog");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
-            al = new AlphaAnimation(0, 100);
-            al.setDuration(500);
-            img.startAnimation(al);
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.dog);
+            mediaPlayer.start();
         } else if (alpha.equals("E")) {
             img.setImageResource(R.drawable.elephant);
             lbl.setText("Elephant");
@@ -219,7 +221,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Elephant");
             vowel.setText("Vowel");
             sky.setText("Grass Alphabet");
-            img.animate().rotation(360).alpha(0).translationX(1200).scaleX(10).scaleY(10).setDuration(8000);
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.elephant);
+            mediaPlayer.start();
         } else if (alpha.equals("F")) {
             img.setImageResource(R.drawable.frog);
             lbl.setText("Frog");
@@ -227,6 +231,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Frog");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.frog);
+            mediaPlayer.start();
         } else if (alpha.equals("G")) {
             img.setImageResource(R.drawable.goat);
             lbl.setText("Goat");
@@ -234,6 +241,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Goat");
             vowel.setText("Consonant");
             sky.setText("Root Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.goat);
+            mediaPlayer.start();
         } else if (alpha.equals("H")) {
             img.setImageResource(R.drawable.hat);
             lbl.setText("Hat");
@@ -241,13 +251,19 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Hat");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.hat);
+            mediaPlayer.start();
         } else if (alpha.equals("I")) {
             img.setImageResource(R.drawable.ink);
-            lbl.setText("Inl");
+            lbl.setText("Ink");
             character.setText("Ii");
             btn.setText("Play Ink");
             vowel.setText("Vowel");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.ink);
+            mediaPlayer.start();
         } else if (alpha.equals("J")) {
             img.setImageResource(R.drawable.juice);
             lbl.setText("Juice");
@@ -255,6 +271,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Juice");
             vowel.setText("Consonant");
             sky.setText("Root Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.juice);
+            mediaPlayer.start();
         } else if (alpha.equals("K")) {
             img.setImageResource(R.drawable.kite);
             lbl.setText("Kite");
@@ -262,6 +281,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Kite");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.kite);
+            mediaPlayer.start();
         } else if (alpha.equals("L")) {
             img.setImageResource(R.drawable.lamb);
             lbl.setText("Lamb");
@@ -269,6 +291,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Lamb");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.lamb);
+            mediaPlayer.start();
         } else if (alpha.equals("M")) {
             img.setImageResource(R.drawable.monkey);
             lbl.setText("Monkey");
@@ -276,6 +301,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Monkey");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.monkey);
+            mediaPlayer.start();
         } else if (alpha.equals("N")) {
             img.setImageResource(R.drawable.nose);
             lbl.setText("Nose");
@@ -283,6 +311,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Nose");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.nose);
+            mediaPlayer.start();
         } else if (alpha.equals("O")) {
             img.setImageResource(R.drawable.ocean);
             lbl.setText("Ocean");
@@ -290,6 +321,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Ocean");
             vowel.setText("Vowel");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.ocean);
+            mediaPlayer.start();
         } else if (alpha.equals("P")) {
             img.setImageResource(R.drawable.parrot);
             lbl.setText("Parrot");
@@ -297,6 +331,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Parrot");
             vowel.setText("Consonant");
             sky.setText("Root Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.parrot);
+            mediaPlayer.start();
         } else if (alpha.equals("Q")) {
             img.setImageResource(R.drawable.quail);
             lbl.setText("Quail");
@@ -304,6 +341,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Quail");
             vowel.setText("Consonant");
             sky.setText("Root Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.quail);
+            mediaPlayer.start();
         } else if (alpha.equals("R")) {
             img.setImageResource(R.drawable.rat);
             lbl.setText("Rat");
@@ -311,6 +351,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Rat");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.rat);
+            mediaPlayer.start();
         } else if (alpha.equals("S")) {
             img.setImageResource(R.drawable.sun);
             lbl.setText("Sun");
@@ -318,6 +361,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Sun");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.sun);
+            mediaPlayer.start();
         } else if (alpha.equals("T")) {
             img.setImageResource(R.drawable.tap);
             lbl.setText("Tap");
@@ -325,6 +371,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Tap");
             vowel.setText("Consonant");
             sky.setText("Sky Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.tap);
+            mediaPlayer.start();
         } else if (alpha.equals("U")) {
             img.setImageResource(R.drawable.umbrella);
             lbl.setText("Umbrella");
@@ -332,6 +381,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Umbrella");
             vowel.setText("Vowel");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.umbrella);
+            mediaPlayer.start();
         } else if (alpha.equals("V")) {
             img.setImageResource(R.drawable.violin);
             lbl.setText("Violin");
@@ -339,6 +391,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Violin");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.violin);
+            mediaPlayer.start();
         } else if (alpha.equals("W")) {
             img.setImageResource(R.drawable.well);
             lbl.setText("Well");
@@ -346,6 +401,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Well");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.well);
+            mediaPlayer.start();
         }
         else if(alpha.equals("X"))
         {
@@ -355,6 +413,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Xylophone");
             vowel.setText("Consonant");
             sky.setText("Root Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.xylophone);
+            mediaPlayer.start();
         }else if(alpha.equals("Y"))
         {
             img.setImageResource(R.drawable.yacht);
@@ -363,6 +424,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Yacht");
             vowel.setText("Consonant");
             sky.setText("Root Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.yacht);
+            mediaPlayer.start();
         }else if(alpha.equals("Z"))
         {
             img.setImageResource(R.drawable.zebra);
@@ -371,6 +435,9 @@ public class secondPage extends AppCompatActivity {
             btn.setText("Play Zebra");
             vowel.setText("Consonant");
             sky.setText("Grass Alphabet");
+            img.startAnimation(rotate);
+            mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.zebra);
+            mediaPlayer.start();
         }
     }
 }
