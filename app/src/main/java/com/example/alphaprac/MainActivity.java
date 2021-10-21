@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(),secondPage.class);
+                intent.putExtra("alphabet",alphabets[i]);
                 startActivity(intent);
             }
         });
