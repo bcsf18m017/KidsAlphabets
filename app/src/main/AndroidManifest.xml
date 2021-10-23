@@ -4,11 +4,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="Kids ABC"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AlphaPrac">
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity
             android:name=".secondPage"
             android:exported="false" />

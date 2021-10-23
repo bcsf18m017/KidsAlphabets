@@ -3,7 +3,9 @@ package com.example.alphaprac;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.app.LauncherActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,3 +40,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
