@@ -412,7 +412,7 @@ public class secondPage extends AppCompatActivity {
             character.setText("Xx");
             btn.setText("Play Xylophone");
             vowel.setText("Consonant");
-            sky.setText("Root Alphabet");
+            sky.setText("Grass Alphabet");
             img.startAnimation(rotate);
             mediaPlayer= MediaPlayer.create(secondPage.this,R.raw.xylophone);
             mediaPlayer.start();
